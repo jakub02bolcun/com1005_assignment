@@ -6,8 +6,8 @@ public class RamblersState extends SearchState {
 	private Coords coordinate;
 	
 	// constructor
-	public RamblersState(Coords stateCoordinate, int lc) {
-		coordinate = stateCoordinate;
+	public RamblersState(Coords coordinates, int lc) {
+		coordinate = coordinates;
 		localCost = lc;
 	}
 	
