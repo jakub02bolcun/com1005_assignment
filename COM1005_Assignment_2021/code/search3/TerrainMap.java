@@ -6,14 +6,14 @@
  * Phil Green  2018/1/10
  * Heidi Christensen 2021
  */
-
+// EQUIVALENT TO CARTA
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
-
+// EQUIVALENT TO CARTA
 public class TerrainMap {
   private int[][] tmap; // the map, array of pixels
   private int width; // max x dimension
