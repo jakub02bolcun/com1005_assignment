@@ -2,17 +2,18 @@
 public class RamblersSearch extends Search {
 
 	private TerrainMap map; // the map that we will be searching
-    private int[][] goal; // the goal pixel
+   // private int[][] goal; 
+    private Coords goal; // the goal coordinate
     
     public TerrainMap getMap() {
     	return map;
     }
     
-    public int[][] getGoal() {
+    public Coords getGoal() {
         return goal;
     }
     
-    public RamblersSearch(TerrainMap m, int[][] g) {
+    public RamblersSearch(TerrainMap m, Coords g) {
         map = m;
         goal = g;    
     }    
