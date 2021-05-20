@@ -1,4 +1,4 @@
-Branch and Bound efficiency tests: 
+Branch and Bound efficiency tests: rounded to 3dp
 ---- random inital states, random goal states, diablo.pgm ----
 0.00788
 0.0331

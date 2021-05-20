@@ -16,8 +16,7 @@ public class RamblersState extends SearchState {
 		coordinate = coordinates;
 		localCost = lc;
 		estRemCost = rc;		
-	}
-	
+	}	
 	
 	// accessor
 	public Coords getCoordinate() {
