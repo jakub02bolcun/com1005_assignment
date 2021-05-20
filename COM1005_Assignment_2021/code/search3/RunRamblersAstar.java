@@ -16,13 +16,12 @@ public class RunRamblersAstar {
 		int initHeight = map1.getTmap()[inity][initx];
 		int goalHeight = map1.getTmap()[goaly][goalx];
 		int remEstCost = goalHeight - initHeight;
-		System.out.println(remEstCost);
 		
 		RamblersSearch searcher = new RamblersSearch(map1, goalCoords);
-		SearchState initState = (SearchState) new RamblersState(initCoords, 0, remEstCost);		
+		SearchState initState = (SearchState) new RamblersState(initCoords, 0, remEstCost);
 		
 		// show strings
-		//String res_bb = searcher.runSearch(initState, "AStar");
+		// String res_bb = searcher.runSearch(initState, "AStar");
 		// only efficiency
 		float res_bb = searcher.runSearchE(initState, "AStar");
 		System.out.println(res_bb);
