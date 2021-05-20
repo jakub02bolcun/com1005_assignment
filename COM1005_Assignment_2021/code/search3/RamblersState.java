@@ -20,7 +20,11 @@ public class RamblersState extends SearchState {
 	public boolean goalPredicate(Search searcher) {
 		RamblersSearch msearcher = (RamblersSearch) searcher;
 		Coords target = msearcher.getGoal();
-		return (coordinate == target);
+		int x1 = coordinate.getx();
+		int x2 = target.getx();
+		int y1 = coordinate.gety();
+		int y2 = target.gety();
+		return ((x1 == x2) && (y1 == y2));
 	}
 
 	@Override // get successors
@@ -57,7 +61,9 @@ public class RamblersState extends SearchState {
 		if (!(currenty-1 == -1)) {
 			Coords successor = new Coords(currenty-1, currentx);
 			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
-		}		
+		}
+		
+
 		
 		return successors;
 	}
@@ -65,12 +71,17 @@ public class RamblersState extends SearchState {
 	@Override // return true if same states
 	public boolean sameState(SearchState s2) {
 		RamblersState rs2 = (RamblersState) s2;
-		return (coordinate == rs2.getCoordinate());		
+		//return (coordinate == rs2.getCoordinate());
+		int x1 = coordinate.getx();
+		int x2 = rs2.getCoordinate().getx();
+		int y1 = coordinate.gety();
+		int y2 = rs2.getCoordinate().gety();
+		return ((x1 == x2) && (y1 == y2));
 	}
 	
 	// toString
 	public String toString() {
-        return ("Coordinates: " + coordinate);
+        return ("Coordinates: (" + coordinate.getx() + ", " + coordinate.gety() + ")");
     }
 
 }
