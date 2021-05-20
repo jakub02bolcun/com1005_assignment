@@ -17,9 +17,8 @@ public class RunRamblersBB {
 		RamblersSearch searcher = new RamblersSearch(map1, goalCoords);
 		SearchState initState = (SearchState) new RamblersState(initCoords, 0);
 		
-		float res_bb = searcher.runSearchE(initState, "branchAndBound");
-		//System.out.println(res_bb);
-		System.out.println(searcher.getMap().getDepth());
+		float res_bb = searcher.runSearchE(initState, "BranchAndBound");
+		System.out.println(res_bb);
 		
 	}
 }
