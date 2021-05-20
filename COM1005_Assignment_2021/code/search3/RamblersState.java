@@ -63,8 +63,6 @@ public class RamblersState extends SearchState {
 			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
 		}
 		
-
-		
 		return successors;
 	}
 
