@@ -1,4 +1,4 @@
-A* efficiency tests: rounded to 3dp
+A* height efficiency tests: rounded to 3dp
 ---- random inital states, random goal states, diablo.pgm ----
 0.00712
 0.00682
