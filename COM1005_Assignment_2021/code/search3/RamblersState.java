@@ -101,7 +101,7 @@ public class RamblersState extends SearchState {
 		return successors;
 	}
 
-	@Override // return true if same statess
+	@Override // return true if same states
 	public boolean sameState(SearchState s2) {
 		RamblersState rs2 = (RamblersState) s2;
 		//return (coordinate == rs2.getCoordinate());
