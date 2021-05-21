@@ -3,16 +3,16 @@ import java.lang.Math;
 
 public class RunRamblersAstar {
 	
-	public static void main(String[] arg) {
+	public static void main(String[] arg) {		
 		
-		
+		// random number generation
 		Random rand = new Random();
 		int goalx = rand.nextInt(252);
 		int goaly = rand.nextInt(249);
 		int initx = rand.nextInt(252);
 		int inity = rand.nextInt(249);
-
 		
+		// create new terrainMap object and set goal and end coordinates
 		TerrainMap map1 = new TerrainMap("code/search3/diablo.pgm");
 		Coords goalCoords = new Coords(goaly, goalx);
 		Coords initCoords = new Coords(inity, initx);
@@ -48,8 +48,9 @@ public class RunRamblersAstar {
 		pythagoras = Math.sqrt(pythagoras);
 		pythagoras = Math.floor(pythagoras);
 		int remEstCost = (int) pythagoras;
-		// END OF A* Euclidean distance
+		// END OF A* Euclidean distance calculation
 		
+		//create new RamblersSearch object and start search
 		RamblersSearch searcher = new RamblersSearch(map1, goalCoords);
 		SearchState initState = (SearchState) new RamblersState(initCoords, 0, remEstCost);
 		
