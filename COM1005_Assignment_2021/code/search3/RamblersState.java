@@ -53,49 +53,53 @@ public class RamblersState extends SearchState {
 		// East successor
 		if (!(currentx+1 == maxX)) {
 			Coords successor = new Coords(currenty, currentx+1);
+			//A* Height
 			int newHeight = map.getTmap()[currenty][currentx+1];
 			int newEstRemCost = goalHeight - newHeight;
 		
 			// BranchAndBound
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
 			// A*
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1], newEstRemCost));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1], newEstRemCost));
 		}
 		
 		// West successor
 		if (!(currentx-1 == -1)) {
 			Coords successor = new Coords(currenty, currentx-1);
+			//A* Height
 			int newHeight = map.getTmap()[currenty][currentx-1];
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1]));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1]));
 			// A*
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1], newEstRemCost));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1], newEstRemCost));
 		}
 		
 		// North successor
 		if (!(currenty+1 == maxY)) {
-			Coords successor = new Coords(currenty+1, currentx);
+			Coords successor = new Coords(currenty+1, currentx);			
+			//A* Height
 			int newHeight = map.getTmap()[currenty+1][currentx];
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx]));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx]));
 			// A*
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx], newEstRemCost));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx], newEstRemCost));
 		}
 		
 		// South successor
 		if (!(currenty-1 == -1)) {
 			Coords successor = new Coords(currenty-1, currentx);
+			//A* Height
 			int newHeight = map.getTmap()[currenty-1][currentx];
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
 			// A*
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx], newEstRemCost));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx], newEstRemCost));
 		}
 		
 		return successors;
