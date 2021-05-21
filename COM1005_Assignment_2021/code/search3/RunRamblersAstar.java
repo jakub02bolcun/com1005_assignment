@@ -38,7 +38,7 @@ public class RunRamblersAstar {
 		// difference in y
 		if (inity > goaly) {
 			ydiff = inity - goaly;
-		} else if (initx < goalx) {
+		} else if (inity < goaly) {
 			ydiff = goaly - inity;
 		} else {
 			ydiff = 0;

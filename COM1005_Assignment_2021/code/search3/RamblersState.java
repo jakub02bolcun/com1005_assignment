@@ -56,6 +56,31 @@ public class RamblersState extends SearchState {
 			//A* Height
 			int newHeight = map.getTmap()[currenty][currentx+1];
 			int newEstRemCost = goalHeight - newHeight;
+			
+			// A* Euclidean distance
+			int xdiff;
+			int ydiff;
+			// difference in x
+			if (currentx > goalx) {
+				xdiff = currentx - goalx;
+			} else if (currentx < goalx) {
+				xdiff = goalx - currentx;
+			} else {
+				xdiff = 0;
+			}
+			// difference in y
+			if (currenty > goaly) {
+				ydiff = currenty - goaly;
+			} else if (currenty < goaly) {
+				ydiff = goaly - currenty;
+			} else {
+				ydiff = 0;
+			}
+			// math operators to square root and round down
+			double pythagoras = (xdiff * xdiff) + (ydiff * ydiff);
+			pythagoras = Math.sqrt(pythagoras);
+			pythagoras = Math.floor(pythagoras);
+			int remEstCost = (int) pythagoras;
 		
 			// BranchAndBound
 			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
