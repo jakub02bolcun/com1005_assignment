@@ -48,8 +48,7 @@ public class RunRamblersAstar {
 		pythagoras = Math.sqrt(pythagoras);
 		pythagoras = Math.floor(pythagoras);
 		int remEstCost = (int) pythagoras;
-		
-		
+		// END OF A* Euclidean distance
 		
 		RamblersSearch searcher = new RamblersSearch(map1, goalCoords);
 		SearchState initState = (SearchState) new RamblersState(initCoords, 0, remEstCost);

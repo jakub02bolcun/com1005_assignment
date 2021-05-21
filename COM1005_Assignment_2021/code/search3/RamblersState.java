@@ -54,17 +54,17 @@ public class RamblersState extends SearchState {
 		if (!(currentx+1 == maxX)) {
 			Coords successor = new Coords(currenty, currentx+1);
 			//A* Height
-			int newHeight = map.getTmap()[currenty][currentx+1];
-			int newEstRemCost = goalHeight - newHeight;
+			//int newHeight = map.getTmap()[currenty][currentx+1];
+			//int newEstRemCost = goalHeight - newHeight;
 			
 			// A* Euclidean distance
 			int xdiff;
 			int ydiff;
 			// difference in x
-			if (currentx > goalx) {
-				xdiff = currentx - goalx;
-			} else if (currentx < goalx) {
-				xdiff = goalx - currentx;
+			if (currentx+1 > goalx) {
+				xdiff = currentx+1 - goalx;
+			} else if (currentx+1 < goalx) {
+				xdiff = goalx - currentx+1;
 			} else {
 				xdiff = 0;
 			}
@@ -80,7 +80,7 @@ public class RamblersState extends SearchState {
 			double pythagoras = (xdiff * xdiff) + (ydiff * ydiff);
 			pythagoras = Math.sqrt(pythagoras);
 			pythagoras = Math.floor(pythagoras);
-			int remEstCost = (int) pythagoras;
+			int newEstRemCost = (int) pythagoras;
 		
 			// BranchAndBound
 			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
@@ -92,8 +92,33 @@ public class RamblersState extends SearchState {
 		if (!(currentx-1 == -1)) {
 			Coords successor = new Coords(currenty, currentx-1);
 			//A* Height
-			int newHeight = map.getTmap()[currenty][currentx-1];
-			int newEstRemCost = goalHeight - newHeight;
+			//int newHeight = map.getTmap()[currenty][currentx-1];
+			//int newEstRemCost = goalHeight - newHeight;
+			
+			// A* Euclidean distance
+			int xdiff;
+			int ydiff;
+			// difference in x
+			if (currentx-1 > goalx) {
+				xdiff = currentx-1 - goalx;
+			} else if (currentx-1 < goalx) {
+				xdiff = goalx - currentx-1;
+			} else {
+				xdiff = 0;
+			}
+			// difference in y
+			if (currenty > goaly) {
+				ydiff = currenty - goaly;
+			} else if (currenty < goaly) {
+				ydiff = goaly - currenty;
+			} else {
+				ydiff = 0;
+			}
+			// math operators to square root and round down
+			double pythagoras = (xdiff * xdiff) + (ydiff * ydiff);
+			pythagoras = Math.sqrt(pythagoras);
+			pythagoras = Math.floor(pythagoras);
+			int newEstRemCost = (int) pythagoras;
 			
 			// BranchAndBound
 			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1]));
@@ -105,8 +130,33 @@ public class RamblersState extends SearchState {
 		if (!(currenty+1 == maxY)) {
 			Coords successor = new Coords(currenty+1, currentx);			
 			//A* Height
-			int newHeight = map.getTmap()[currenty+1][currentx];
-			int newEstRemCost = goalHeight - newHeight;
+			//int newHeight = map.getTmap()[currenty+1][currentx];
+			//int newEstRemCost = goalHeight - newHeight;
+			
+			// A* Euclidean distance
+			int xdiff;
+			int ydiff;
+			// difference in x
+			if (currentx > goalx) {
+				xdiff = currentx - goalx;
+			} else if (currentx < goalx) {
+				xdiff = goalx - currentx;
+			} else {
+				xdiff = 0;
+			}
+			// difference in y
+			if (currenty+1 > goaly) {
+				ydiff = currenty+1 - goaly;
+			} else if (currenty+1 < goaly) {
+				ydiff = goaly - currenty+1;
+			} else {
+				ydiff = 0;
+			}
+			// math operators to square root and round down
+			double pythagoras = (xdiff * xdiff) + (ydiff * ydiff);
+			pythagoras = Math.sqrt(pythagoras);
+			pythagoras = Math.floor(pythagoras);
+			int newEstRemCost = (int) pythagoras;
 			
 			// BranchAndBound
 			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx]));
@@ -118,8 +168,33 @@ public class RamblersState extends SearchState {
 		if (!(currenty-1 == -1)) {
 			Coords successor = new Coords(currenty-1, currentx);
 			//A* Height
-			int newHeight = map.getTmap()[currenty-1][currentx];
-			int newEstRemCost = goalHeight - newHeight;
+			//int newHeight = map.getTmap()[currenty-1][currentx];
+			//int newEstRemCost = goalHeight - newHeight;
+			
+			// A* Euclidean distance
+			int xdiff;
+			int ydiff;
+			// difference in x
+			if (currentx > goalx) {
+				xdiff = currentx - goalx;
+			} else if (currentx < goalx) {
+				xdiff = goalx - currentx;
+			} else {
+				xdiff = 0;
+			}
+			// difference in y
+			if (currenty-1 > goaly) {
+				ydiff = currenty-1 - goaly;
+			} else if (currenty-1 < goaly) {
+				ydiff = goaly - currenty-1;
+			} else {
+				ydiff = 0;
+			}
+			// math operators to square root and round down
+			double pythagoras = (xdiff * xdiff) + (ydiff * ydiff);
+			pythagoras = Math.sqrt(pythagoras);
+			pythagoras = Math.floor(pythagoras);
+			int newEstRemCost = (int) pythagoras;
 			
 			// BranchAndBound
 			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
