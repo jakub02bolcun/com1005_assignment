@@ -57,9 +57,9 @@ public class RamblersState extends SearchState {
 			int newEstRemCost = goalHeight - newHeight;
 		
 			// BranchAndBound
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1]));
 			// A*
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1], newEstRemCost));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx+1], newEstRemCost));
 		}
 		
 		// West successor
@@ -69,9 +69,9 @@ public class RamblersState extends SearchState {
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1]));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1]));
 			// A*
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1], newEstRemCost));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty][currentx-1], newEstRemCost));
 		}
 		
 		// North successor
@@ -81,9 +81,9 @@ public class RamblersState extends SearchState {
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx]));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx]));
 			// A*
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx], newEstRemCost));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty+1][currentx], newEstRemCost));
 		}
 		
 		// South successor
@@ -93,9 +93,9 @@ public class RamblersState extends SearchState {
 			int newEstRemCost = goalHeight - newHeight;
 			
 			// BranchAndBound
-			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
+			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx]));
 			// A*
-			successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx], newEstRemCost));
+			//successors.add((SearchState) new RamblersState(successor, map.getTmap()[currenty-1][currentx], newEstRemCost));
 		}
 		
 		return successors;

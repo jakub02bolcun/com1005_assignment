@@ -9,10 +9,11 @@ public class RunRamblersBB {
 		int goalx = rand.nextInt(252);
 		int goaly = rand.nextInt(249);
 		int initx = rand.nextInt(252);
-		int inity = rand.nextInt(249);
+		int inity = rand.nextInt(249);		
 		
 		// create new map object
 		TerrainMap map1 = new TerrainMap("code/search3/diablo.pgm");
+		
 		// set coordinates
 		Coords goalCoords = new Coords(goaly, goalx);
 		Coords initCoords = new Coords(inity, initx);
