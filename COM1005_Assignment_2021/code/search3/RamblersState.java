@@ -36,10 +36,12 @@ public class RamblersState extends SearchState {
 
 	@Override // get successors
 	public ArrayList<SearchState> getSuccessors(Search searcher) {
+		// create new objects and arrayList
 		RamblersSearch msearcher = (RamblersSearch) searcher;
 		TerrainMap map = msearcher.getMap();
 		ArrayList<SearchState> successors = new ArrayList<SearchState>();
 		
+		// set up variables for various searches
 		Coords current = coordinate;
 		int currentx = current.getx();
 		int currenty = current.gety();
@@ -208,7 +210,6 @@ public class RamblersState extends SearchState {
 	@Override // return true if same states
 	public boolean sameState(SearchState s2) {
 		RamblersState rs2 = (RamblersState) s2;
-		//return (coordinate == rs2.getCoordinate());
 		int x1 = coordinate.getx();
 		int x2 = rs2.getCoordinate().getx();
 		int y1 = coordinate.gety();
